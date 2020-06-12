@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>9199</ID>
+      <Description>"Speedhack"</Description>
+      <LastState/>
+      <Color>FFFF00</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+luacall(speedhack_setSpeed(10))
+
+[DISABLE]
+luacall(speedhack_setSpeed(1))
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Activate</Action>
+          <Keys>
+            <Key>17</Key>
+            <Key>107</Key>
+          </Keys>
+          <ID>0</ID>
+          <ActivateSound>Activate</ActivateSound>
+        </Hotkey>
+        <Hotkey>
+          <Action>Deactivate</Action>
+          <Keys>
+            <Key>17</Key>
+            <Key>109</Key>
+          </Keys>
+          <ID>1</ID>
+          <DeactivateSound>Deactivate</DeactivateSound>
+        </Hotkey>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>22549</Key>
+            <Key>22531</Key>
+          </Keys>
+          <ID>2</ID>
+          <ActivateSound>Activate</ActivateSound>
+          <DeactivateSound>Deactivate</DeactivateSound>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>9211</ID>
+      <Description>"EXP Multiplier"</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <Color>FFFF00</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+
+aobscanmodule(expmultiplier,v2r.exe,48 0F 47 D8 48 89 5E 08) // should be unique
+alloc(newmem,$1000,"v2r.exe"+5D679B)
+
+label(code)
+label(return)
+alloc(expmult,4)
+registersymbol(expmult)
+
+expmult:
+dd 4
+newmem:
+
+code:
+  cmova rbx,rax
+  sub rbx,[rsi+08]
+  imul rbx,[expmult]
+  add [rsi+08],rbx
+  jmp return
+
+expmultiplier:
+  jmp newmem
+  nop
+  nop
+  nop
+return:
+registersymbol(expmultiplier)
+
+[DISABLE]
+
+expmultiplier:
+  db 48 0F 47 D8 48 89 5E 08
+
+unregistersymbol(expmultiplier)
+dealloc(newmem)
+unregistersymbol(expmult)
+dealloc(expmult)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "v2r.exe"+5D679B
+
+"v2r.exe"+5D676D: 79 08                          -  jns v2r.exe+5D6777
+"v2r.exe"+5D676F: F2 0F 58 05 61 D1 A7 00        -  addsd xmm0,qword ptr [v2r.exe+10538D8]
+"v2r.exe"+5D6777: F2 0F 59 05 F9 8E 83 00        -  mulsd xmm0,[v2r.exe+E0F678]
+"v2r.exe"+5D677F: F2 48 0F 2C C0                 -  cvttsd2si rax,xmm0
+"v2r.exe"+5D6784: 48 2B E8                       -  sub rbp,rax
+"v2r.exe"+5D6787: 48 8B 5E 08                    -  mov rbx,[rsi+08]
+"v2r.exe"+5D678B: B9 9E 86 01 00                 -  mov ecx,0001869E
+"v2r.exe"+5D6790: E8 2B 82 FF FF                 -  call v2r.exe+5CE9C0
+"v2r.exe"+5D6795: 48 03 DD                       -  add rbx,rbp
+"v2r.exe"+5D6798: 48 3B D8                       -  cmp rbx,rax
+// ---------- INJECTING HERE ----------
+"v2r.exe"+5D679B: 48 0F 47 D8                    -  cmova rbx,rax
+"v2r.exe"+5D679F: 48 89 5E 08                    -  mov [rsi+08],rbx
+// ---------- DONE INJECTING  ----------
+"v2r.exe"+5D67A3: 41 81 FE 9F 86 01 00           -  cmp r14d,0001869F
+"v2r.exe"+5D67AA: 73 2F                          -  jae v2r.exe+5D67DB
+"v2r.exe"+5D67AC: 41 8B CE                       -  mov ecx,r14d
+"v2r.exe"+5D67AF: E8 0C 82 FF FF                 -  call v2r.exe+5CE9C0
+"v2r.exe"+5D67B4: 48 85 C0                       -  test rax,rax
+"v2r.exe"+5D67B7: 74 1D                          -  je v2r.exe+5D67D6
+"v2r.exe"+5D67B9: 0F 1F 80 00 00 00 00           -  nop [rax+00000000]
+"v2r.exe"+5D67C0: 48 39 46 08                    -  cmp [rsi+08],rax
+"v2r.exe"+5D67C4: 72 10                          -  jb v2r.exe+5D67D6
+"v2r.exe"+5D67C6: 48 8B D6                       -  mov rdx,rsi
+}
+
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Activate</Action>
+          <Keys>
+            <Key>18</Key>
+            <Key>45</Key>
+          </Keys>
+          <ID>0</ID>
+          <ActivateSound>Activate</ActivateSound>
+        </Hotkey>
+        <Hotkey>
+          <Action>Deactivate</Action>
+          <Keys>
+            <Key>18</Key>
+            <Key>46</Key>
+          </Keys>
+          <ID>1</ID>
+          <DeactivateSound>Deactivate</DeactivateSound>
+        </Hotkey>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>17</Key>
+            <Key>98</Key>
+          </Keys>
+          <ID>2</ID>
+          <ActivateSound>Activate</ActivateSound>
+          <DeactivateSound>Deactivate</DeactivateSound>
+        </Hotkey>
+      </Hotkeys>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>9266</ID>
+          <Description>"EXP Multiplier"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>expmult</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>9278</ID>
+      <Description>"Perfect Item Rolls"</Description>
+      <LastState Activated="1"/>
+      <Color>FFFF00</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+
+aobscanmodule(roll,v2r.exe,66 89 32 0F B7 4A 02) // should be unique
+alloc(newmem,$1000,"v2r.exe"+5ADD25)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rdx],si
+  movzx ecx,word ptr [rdx+02]
+//mov word ptr [rdx+6],#3    // Rarity
+  mov word ptr [rdx+12],#100 // Parameter 1
+  mov word ptr [rdx+16],#100 // Parameter 2
+  mov word ptr [rdx+1A],#100 // Parameter 3
+  mov word ptr [rdx+1E],#100 // Parameter 4
+  mov word ptr [rdx+22],#100 // Trait 1
+  mov word ptr [rdx+26],#100 // Trait 2
+  mov word ptr [rdx+2A],#100 // Trait 3
+  mov word ptr [rdx+2E],#100 // Trait 4
+  mov word ptr [rdx+32],#100 // Trait 5
+  mov word ptr [rdx+36],#100 // Trait 6
+  mov word ptr [rdx+3A],#100 // Trait 7
+  mov word ptr [rdx+3E],#100 // Trait 8
+  jmp return
+
+roll:
+  jmp newmem
+  nop
+  nop
+return:
+registersymbol(roll)
+
+[DISABLE]
+
+roll:
+  db 66 89 32 0F B7 4A 02
+
+unregistersymbol(roll)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "v2r.exe"+5ADD25
+
+"v2r.exe"+5ADD01: 0F 10 03              -  movups xmm0,[rbx]
+"v2r.exe"+5ADD04: 0F B7 32              -  movzx esi,word ptr [rdx]
+"v2r.exe"+5ADD07: 41 B0 01              -  mov r8l,01
+"v2r.exe"+5ADD0A: 0F 11 02              -  movups [rdx],xmm0
+"v2r.exe"+5ADD0D: 0F 10 4B 10           -  movups xmm1,[rbx+10]
+"v2r.exe"+5ADD11: 0F 11 4A 10           -  movups [rdx+10],xmm1
+"v2r.exe"+5ADD15: 0F 10 43 20           -  movups xmm0,[rbx+20]
+"v2r.exe"+5ADD19: 0F 11 42 20           -  movups [rdx+20],xmm0
+"v2r.exe"+5ADD1D: 0F 10 4B 30           -  movups xmm1,[rbx+30]
+"v2r.exe"+5ADD21: 0F 11 4A 30           -  movups [rdx+30],xmm1
+// ---------- INJECTING HERE ----------
+"v2r.exe"+5ADD25: 66 89 32              -  mov [rdx],si
+"v2r.exe"+5ADD28: 0F B7 4A 02           -  movzx ecx,word ptr [rdx+02]
+// ---------- DONE INJECTING  ----------
+"v2r.exe"+5ADD2C: BA 01 00 00 00        -  mov edx,00000001
+"v2r.exe"+5ADD31: E8 BA 00 00 00        -  call v2r.exe+5ADDF0
+"v2r.exe"+5ADD36: 48 85 FF              -  test rdi,rdi
+"v2r.exe"+5ADD39: 74 02                 -  je v2r.exe+5ADD3D
+"v2r.exe"+5ADD3B: 89 37                 -  mov [rdi],esi
+"v2r.exe"+5ADD3D: B0 01                 -  mov al,01
+"v2r.exe"+5ADD3F: 48 8B 5C 24 30        -  mov rbx,[rsp+30]
+"v2r.exe"+5ADD44: 48 8B 74 24 38        -  mov rsi,[rsp+38]
+"v2r.exe"+5ADD49: 48 83 C4 20           -  add rsp,20
+"v2r.exe"+5ADD4D: 5F                    -  pop rdi
+}
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>9282</ID>
+      <Description>"Infinite Items"</Description>
+      <LastState/>
+      <Color>FFFF00</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+
+aobscanmodule(infitems,v2r.exe,89 73 04 83 7F 20 13) // should be unique
+alloc(newmem,$1000,"v2r.exe"+5ADFDB)
+
+label(code)
+label(return)
+
+newmem:
+
+// esi is the new quantity to assign
+// rax is max item quantity
+
+code:
+  mov esi,rax
+  mov [rbx+04],esi
+  cmp dword ptr [rdi+20],13
+  jmp return
+
+infitems:
+  jmp newmem
+  nop
+  nop
+return:
+registersymbol(infitems)
+
+[DISABLE]
+
+infitems:
+  db 89 73 04 83 7F 20 13
+
+unregistersymbol(infitems)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "v2r.exe"+5ADFDB
+
+"v2r.exe"+5ADFC2: 8B C2                          -  mov eax,edx
+"v2r.exe"+5ADFC4: 2B C1                          -  sub eax,ecx
+"v2r.exe"+5ADFC6: EB 09                          -  jmp v2r.exe+5ADFD1
+"v2r.exe"+5ADFC8: 8B 47 1C                       -  mov eax,[rdi+1C]
+"v2r.exe"+5ADFCB: 2B C1                          -  sub eax,ecx
+"v2r.exe"+5ADFCD: 41 0F 48 C6                    -  cmovs eax,r14d
+"v2r.exe"+5ADFD1: 3B C2                          -  cmp eax,edx
+"v2r.exe"+5ADFD3: 0F 47 C2                       -  cmova eax,edx
+"v2r.exe"+5ADFD6: 3B F0                          -  cmp esi,eax
+"v2r.exe"+5ADFD8: 0F 4F F0                       -  cmovg esi,eax
+// ---------- INJECTING HERE ----------
+"v2r.exe"+5ADFDB: 89 73 04                       -  mov [rbx+04],esi
+"v2r.exe"+5ADFDE: 83 7F 20 13                    -  cmp dword ptr [rdi+20],13
+// ---------- DONE INJECTING  ----------
+"v2r.exe"+5ADFE2: 75 12                          -  jne v2r.exe+5ADFF6
+"v2r.exe"+5ADFE4: E8 57 C0 00 00                 -  call v2r.exe+5BA040
+"v2r.exe"+5ADFE9: 48 8B 0D F8 A2 F3 00           -  mov rcx,[v2r.exe+14E82E8]
+"v2r.exe"+5ADFF0: 89 81 C8 67 11 00              -  mov [rcx+001167C8],eax
+"v2r.exe"+5ADFF6: B0 01                          -  mov al,01
+"v2r.exe"+5ADFF8: E9 93 FE FF FF                 -  jmp v2r.exe+5ADE90
+"v2r.exe"+5ADFFD: 48 8B 5C 24 40                 -  mov rbx,[rsp+40]
+"v2r.exe"+5AE002: 48 8B 6C 24 48                 -  mov rbp,[rsp+48]
+"v2r.exe"+5AE007: 32 C0                          -  xor al,al
+"v2r.exe"+5AE009: 48 83 C4 20                    -  add rsp,20
+}
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>9288</ID>
+      <Description>"Pointers"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <Color>C080FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>9299</ID>
+          <Description>"Item Data Pointer"</Description>
+          <VariableType>2 Bytes</VariableType>
+          <Address>v2r.exe+14E82E8</Address>
+          <Offsets>
+            <Offset>-BF7CB7E</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9306</ID>
+          <Description>"Character Pointer"</Description>
+          <VariableType>8 Bytes</VariableType>
+          <Address>v2r.exe+14E82E8</Address>
+          <Offsets>
+            <Offset>2288</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9309</ID>
+          <Description>"Challenges Pointer"</Description>
+          <VariableType>8 Bytes</VariableType>
+          <Address>v2r.exe+14E82E8</Address>
+          <Offsets>
+            <Offset>8D90</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9310</ID>
+          <Description>"Misc Pointer"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>v2r.exe+14E82E8</Address>
+          <Offsets>
+            <Offset>F6A4</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9296</ID>
+          <Description>"Character Calcs Pointer"</Description>
+          <VariableType>2 Bytes</VariableType>
+          <Address>v2r.exe+14E82E8</Address>
+          <Offsets>
+            <Offset>116B98</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9289</ID>
+          <Description>"Item Pointer"</Description>
+          <VariableType>2 Bytes</VariableType>
+          <Address>v2r.exe+14E82E8</Address>
+          <Offsets>
+            <Offset>1D05C</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9286</ID>
+          <Description>"Equipment Pointer"</Description>
+          <VariableType>2 Bytes</VariableType>
+          <Address>v2r.exe+14E82E8</Address>
+          <Offsets>
+            <Offset>25060</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9303</ID>
+          <Description>"Scout Pinter"</Description>
+          <VariableType>2 Bytes</VariableType>
+          <Address>v2r.exe+14E82E8</Address>
+          <Offsets>
+            <Offset>C742C</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9304</ID>
+          <Description>"Neplunker Pointer"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>v2r.exe+14F1F60</Address>
+          <Offsets>
+            <Offset>44</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols>
+    <SymbolEntry>
+      <Name>BLucre</Name>
+      <Address>015C0010</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>BHP</Name>
+      <Address>015C0000</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>GetHP</Name>
+      <Address>463A7445</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>GetLucre</Name>
+      <Address>463A9B27</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>IgnoreMana</Name>
+      <Address>463C8647</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>BaseGold</Name>
+      <Address>02680000</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>GetGold</Name>
+      <Address>00F6FCC9</Address>
+    </SymbolEntry>
+  </UserdefinedSymbols>
+  <Structures StructVersion="2">
+    <Structure Name="AP" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="0" Vartype="4 Bytes" Bytesize="4" RLECount="74" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="296" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Hexadecimal"/>
+        <Element Offset="324" Vartype="4 Bytes" Bytesize="4" RLECount="849" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3720" Vartype="4 Bytes" Bytesize="4" RLECount="8" DisplayMethod="Hexadecimal"/>
+        <Element Offset="3752" Vartype="4 Bytes" Bytesize="4" RLECount="86" DisplayMethod="Unsigned Integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="HP" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="0" Vartype="4 Bytes" Bytesize="4" RLECount="74" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="296" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Hexadecimal"/>
+        <Element Offset="324" Vartype="4 Bytes" Bytesize="4" RLECount="849" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3720" Vartype="4 Bytes" Bytesize="4" RLECount="8" DisplayMethod="Hexadecimal"/>
+        <Element Offset="3752" Vartype="4 Bytes" Bytesize="4" RLECount="86" DisplayMethod="Unsigned Integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="Items" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="0" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="4" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="8" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="12" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="16" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="20" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="24" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="28" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="32" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="36" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="40" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="44" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="48" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="52" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="56" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="60" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="64" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="68" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="72" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="76" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="80" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="84" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="88" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="92" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="96" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="100" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="104" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="108" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="112" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="116" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="120" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="124" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="128" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="132" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="136" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="140" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="144" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="148" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="152" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="156" Vartype="4 Bytes" Bytesize="4" RLECount="985" DisplayMethod="Unsigned Integer"/>
+      </Elements>
+    </Structure>
+  </Structures>
+</CheatTable>

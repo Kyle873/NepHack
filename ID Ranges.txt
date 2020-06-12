@@ -1,0 +1,90 @@
+﻿Recovery Items, 1, 14
+Status Recovery Items, 19, 27
+Resurrection Items, 35, 38
+Usable/Openable Items, 40, 43
+Limited Healing Items, 51, 64
+Loot Boxes, 65, 94
+Scout Items, 104, 104
+Story Items, 201, 205
+Cards, 401, 433
+Statues, 470, 485
+Pocket Expansions, 486, 499
+Forging Plans, 501, 511
+City Plans, 601, 659
+Materials, 1001, 1508
+
+Weapons - Neptune, 2001, 2099
+Weapons - Noire, 2101, 2199
+Weapons - Blanc, 2201, 2299
+Weapons - Vert, 2301, 2399
+Weapons - Nepgear, 2401, 2499
+Weapons - Uni, 2501, 2599
+Weapons - Rom, 2601, 2699
+Weapons - Ram, 2701, 2799
+Weapons - IF, 2801, 2899
+Weapons - Compa, 2901, 2999
+Weapons - Uzume, 3001, 3099
+Weapons - Older Neptune, 3101, 3199
+Weapons - S-Sha, 3201, 3299
+Weapons - B-Sha, 3301, 3399
+Weapons - C-Sha, 3401, 3499
+Weapons - K-Sha, 3501, 3599
+
+Armor, 4001, 4999
+
+Costumes - Neptune, 5001, 5099
+Costumes - Noire, 5101, 5199
+Costumes - Blanc, 5201, 5299
+Costumes - Vert, 5301, 5399
+Costumes - Nepgear, 5401, 5499
+Costumes - Uni, 5501, 5599
+Costumes - Rom, 5601, 5699
+Costumes - Ram, 5701, 5799
+Costumes - IF, 5801, 5899
+Costumes - Compa, 5901, 5999
+Costumes - Uzume, 6001, 6099
+Costumes - Older Neptune, 6101, 6199
+Costumes - S-Sha, 6201, 6299
+Costumes - B-Sha, 6301, 6399
+Costumes - C-Sha, 6401, 6499
+Costumes - K-Sha, 6501, 6599
+
+Accessories - Neptune, 7001, 7099
+Accessories - Noire, 7101, 7199
+Accessories - Blanc, 7201, 7299
+Accessories - Vert, 7301, 7399
+Accessories - Nepgear, 7401, 7499
+Accessories - Uni, 7501, 7599
+Accessories - Rom & Ram, 7601, 7799
+Accessories - IF, 7801, 7899
+Accessories - Compa, 7901, 7999
+Accessories - Uzume, 8001, 8099
+Accessories - Older Neptune, 8101, 8199
+Accessories - S-Sha, 8201, 8299
+Accessories - B-Sha, 8301, 8399
+Accessories - C-Sha, 8401, 8499
+Accessories - K-Sha, 8501, 8599
+Accessories - Generic, 8601, 8999
+
+Processors - Neptune, 10001, 10999
+Processors - Noire, 11001, 11999
+Processors - Blanc, 12001, 12999
+Processors - Vert, 13001, 13999
+Processors - Nepgear, 14001, 14999
+Processors - Uni, 15001, 15999
+Processors - Rom, 16001, 16999
+Processors - Ram, 17001, 17999
+Processors - Uzume, 18001, 18999
+Processors - Special, 19001, 19999
+
+Weapon Plans, 21001, 21999
+Armor Plans, 22001, 22999
+Costume Plans, 23001, 24999
+Accessory Plans, 26001, 27999
+Processor Plans, 27001, 28999
+
+Idea Chips, 30000, 30999
+Discs, 39000, 39999
+
+Base Equipment, 40000, 60000
+Flag Items, 60000, 60099

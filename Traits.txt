@@ -1,0 +1,150 @@
+﻿// The ones digit is usually used for rolling against the gear type if it isn't explicitly specified
+// 1 = Weapons, 2 = Armor, 3 = Outfits, 4 = Accessories
+
+/// Empty
+None, 0
+
+/// Stats
+Accuracy, 101, 9
+Guard Power, 601, 9
+Guard Rate, 701, 9
+HP, 801, 9
+SP, 901, 9
+SCP, 1001, 9
+AP, 1101, 9
+ACP, 1111, 19
+STR, 1201, 9
+VIT, 1301, 9
+INT, 1401, 9
+MND, 1501, 9
+AGI, 1601, 9
+TEC, 1701, 9
+LUC, 1801, 9
+MOV, 1901, 9
+
+/// Status Effects
+Poison Resist, 2001, 9
+Poison Slip, 2011, 9
+Poison Recovery, 2101, 9
+Virus Resist, 2201, 9
+Virus Recovery, 2301, 9
+Paralysis Resist, 2401, 9
+Paralysis Recovery, 2501, 9
+Confusion Resist, 2601, 9
+Confusion Recovery, 2701, 9
+MoveLimit Resist, 2801, 9
+MoveLimit Recovery, 2901, 9
+
+/// Nullifiers
+Null Poison, 3001
+Null Virus, 3002
+Null Paralysis, 3003
+Null Confusion, 3004
+Null MoveLimit, 3005
+Null Buff, 3006
+Null Debuff, 3007
+Null Knockback, 3008
+Null Backstab, 3009
+Null BackAttackEncounter, 3010
+
+/// Enemy Damage Increase/Decrease (+1 for each enemy type)
+Enemy Damage Reduction, 3021, 9
+Enemy Damage Resistance, 3031, 9
+Enemy Damage Increase, 3041, 9
+
+/// Combos
+Rush Combo Damage, 3101, 49
+Rush Combo Critical Rate, 3111, 49
+Power Combo Damage, 3201, 49
+Power Combo Critical Rate, 3211, 49
+Enchant Combo Damage, 3301, 49
+Enchant Combo Critical Rate, 3311, 49
+
+/// Elemental Damage
+Fire Element Damage, 3801, 9
+Wind Element Damage, 3901, 9
+Ice Element Damage, 4001, 9
+Lightning Element Damage, 4101, 9
+Light Element Damage, 4201, 9
+Dark Element Damage, 4301, 9
+
+/// Criticals
+Critical Damage, 4401, 9
+Critical Rate, 4501, 9
+Critical Evasion, 4601, 9
+
+/// Damage Reduction
+Physical Damage Reduction, 4701, 9
+Magic Damage Reduction, 4801, 9
+Fire Damage Reduction, 4901, 9
+Wind Damage Reduction, 5001, 9
+Ice Damage Reduction, 5101, 9
+Lightning Damage Reduction, 5201, 9
+Light Damage Reduction, 5301, 9
+Dark Damage Reduction, 5401, 9
+
+/// Acquisition
+Acquired EXP, 5501, 9
+Drop Rate, 5601, 9
+Obtained Credits, 5701, 9
+
+/// PP (Pocket Points)
+PP, 5801, 9
+Charge PP, 5901, 9
+
+/// Aggression
+Hostility Increase, 6001, 9
+Hostility Decrease, 6101, 9
+Fear Increase, 6201, 9
+Fear Decrease, 6301, 9
+
+/// Movement
+Evasion Rate, 6401, 9
+Movement Speed, 6501, 19
+
+/// HDD
+HDD Damage Reduction, 6601, 9
+
+/// Damage Increase
+Physical Damage Increase, 6701, 9
+Magical Damage Increase, 6801, 9
+
+/// Combo Absorption
+Power HP Absorb, 6901, 9
+Power SP Absorb, 7001, 9
+
+/// Combo Status Effect Modifiers
+Enchant Poison, 7101, 9
+Enchant Paralysis, 7201, 9
+Damage Poison Enemy, 7301, 9
+Damage Paralyzed Enemy, 7401, 9
+Damage Move Limit Enemy, 7501, 9
+
+/// Fighting With Sister
+Younger Sister Physical Damage, 8001, 9
+Younger Sister Magic Damage, 8101, 9
+Older Sister Physical Damage, 8201, 9
+Older Sister Magic Damage, 8301, 9
+Younger Sister Physical Damage Reduction, 8401, 9
+Younger Sister Magic Damage Reduction, 8501, 9
+Older Sister Physical Damage Reduction, 8601, 9
+Older Sister Magic Damage Reduction, 8701, 9
+
+/// Battle Start
+Battle Start HP, 8801, 9
+
+/// Fighting Alongside
+Alongside Nepgear, 8901
+Alongside Uni, 8902
+Alongside Rom, 8903
+Alongside Ram, 8904
+
+/// Critical HP/Counters/Recovery
+Critical HP Physical Evasion, 9001, 9
+Critical HP Magic Evasion, 9101, 9
+Counter Damage, 9201, 9
+Critical HP Fatal Hit Block, 9301, 9
+Transform Recovery, 9401, 9
+
+/// Skill Modifiers (+100 for each character)
+Skill Mod, 15101, 1600
